@@ -1,0 +1,45 @@
+footer {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: rgb(49, 0, 0);
+    color: white;
+    .logoFooter {
+        margin-bottom: -5px;
+        font-size: 40px;
+        font-family: 'Staatliches';
+    }
+    .containerSocialMedia {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        width: 370px;
+        font-size: 500px;
+        .logoFacebook {
+            &:hover {
+                color: #4267B2;
+            }
+        }
+        .logoYoutube {
+            &:hover {
+                color: #FF0000;
+            }
+        }
+        .logoTwitter {
+            &:hover {
+                color: #1DA1F2;
+            }
+        }
+        .logoInstagram {
+            &:hover {
+                color: rgb(255, 208, 80);
+            }
+        }
+    }
+    .copyrightCreditsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}

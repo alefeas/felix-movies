@@ -1,0 +1,16 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+//COMPONENTS
+@import './components/_navBar';
+@import './components/_footer';
+
+//GENERAL STYLES
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}

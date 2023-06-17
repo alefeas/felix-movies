@@ -1,0 +1,35 @@
+.navBar {
+    height: 70px;
+    align-items: center;                
+    color: white;
+    background-color: rgb(49, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    .linksNavContainer {
+        display: flex;
+        gap: 40px;
+        margin-left: 20px;
+        .logoNav {
+            font-size: 40px;
+            font-family: 'Staatliches';
+        }
+        div {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+    .userIcon {
+        font-size: 38px;
+        padding: 5px;
+        border-radius: 50%;
+        border: 1px solid rgb(255, 255, 255);
+    }
+    .searchContainer {
+        gap: 20px;        
+    }
+    .inputSearch {
+        font-family: 'Chakra Petch', sans-serif;
+    }
+}
