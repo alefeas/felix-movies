@@ -1,0 +1,22 @@
+.mediaListContainer {
+    margin: 10px 20px;
+    .mediaList {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .mediaItem {
+        height: 340px;
+        cursor: pointer;
+    }
+    .slider {
+        cursor: grab;
+    }
+    img {
+        margin: 20px 0;
+        pointer-events: none;
+    }
+    h3 {
+        font-size: 30px;
+    }
+}

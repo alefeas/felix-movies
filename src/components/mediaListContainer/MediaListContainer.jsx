@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { db } from "../../config/firebase.js"
 import { getDocs, collection } from "firebase/firestore"
 import { useState } from "react"
-import { MediaList } from "./mediaList/MediaList.jsx"
+import { MediaListSlider } from "./mediaListSlider/MediaListSlider.jsx"
 
 export const MediaListContainer = () => {
     const [mediaList, setMediaList] = useState([])
@@ -21,13 +21,29 @@ export const MediaListContainer = () => {
             console.error(err)
         }
     }
+    console.log(mediaList)
     useEffect(() => {
         getMediaList()
-    }, [])
+    })
     
     return (
-        <>
-            <MediaList media={mediaList}/>
-        </>
+        <div className="mediaListContainer">
+            <div>
+                <h3>MOST LIKED</h3>
+                <MediaListSlider media={mediaList.filter(media => media.percentageOfLikes >= 88)}/>
+            </div>
+            <div>
+                <h3>NEW MOVIES</h3>
+                <MediaListSlider media={mediaList.filter(media => media.releaseYear > 2020)}/>
+            </div>
+            <div>
+                <h3>OLD MOVIES</h3>
+                <MediaListSlider media={mediaList.filter(media => media.releaseYear <= 2006)}/>
+            </div>
+            <div>
+                <h3>ANIMATED MOVIES</h3>
+                <MediaListSlider media={mediaList.filter(media => media.category === "animated")}/>
+            </div>
+        </div>
     )
 }
