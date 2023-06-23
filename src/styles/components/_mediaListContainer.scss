@@ -1,20 +1,25 @@
-.mediaListContainer {
+.mediaListSliderContainer {
     margin: 10px 20px;
-    .mediaList {
+    .mediaListSlider {
         display: flex;
         flex-direction: row;
-        gap: 50px;
+        gap: 10px;
+    }
+    .mediaList {
+        display: flex;
+        flex-wrap: wrap;
     }
     .mediaItem {
-        height: 340px;
         cursor: pointer;
+        margin: 15px 0;
+        img {
+            max-width: 225px;
+            width: 100%;
+            pointer-events: none;
+        }
     }
     .slider {
         cursor: grab;
-    }
-    img {
-        margin: 20px 0;
-        pointer-events: none;
     }
     h3 {
         font-size: 30px;

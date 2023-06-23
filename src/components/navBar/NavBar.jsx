@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
-import '../../styles/styles.scss'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,12 +53,13 @@ export const NavBar = () => {
   return (
     <nav className='navBar'>
         <div className='linksNavContainer'>
-            <span className='logoNav'>FELIX</span>
+            <Link to='/' className="" href="#"><span className='logoNav'>FELIX</span></Link>
             <div>
-                <span>Home</span>
-                <span>Movies</span>
-                <span>Series</span>
-                <span>My list</span>
+              <Link to='/' className="" href="#">Home</Link>
+              <Link to='/movies' className="" href="#">Movies</Link>
+              <Link to='/series' className="" href="#">Series</Link>
+              <Link to='/category' className="" href="#">Categories</Link>
+              <Link to='/favorites' className="" href="#">My list</Link>
             </div>
         </div>
         <Toolbar className='searchContainer'>

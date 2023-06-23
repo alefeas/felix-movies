@@ -1,13 +1,17 @@
 import { NavBar } from "./components/navBar/NavBar.jsx"
 import { Footer } from "./components/footer/Footer.jsx"
-import { MediaListContainer } from "./components/mediaListContainer/MediaListContainer.jsx"
+import { AppRoutes } from "./appRoutes/AppRoutes.jsx";
+import { BrowserRouter } from "react-router-dom";
+import './styles/styles.scss'
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <MediaListContainer/>
-      <Footer/>
+      <BrowserRouter>
+        <NavBar />
+        <AppRoutes/>
+        <Footer/>
+      </BrowserRouter>
     </div>
   );
 }
