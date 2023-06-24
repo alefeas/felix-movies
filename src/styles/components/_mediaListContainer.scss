@@ -1,5 +1,6 @@
 .mediaListSliderContainer {
     margin: 10px 20px;
+    margin-top: 55%;
     .mediaListSlider {
         display: flex;
         flex-direction: row;
@@ -13,8 +14,7 @@
         cursor: pointer;
         margin: 15px 0;
         img {
-            max-width: 225px;
-            width: 100%;
+            width: 200px;
             pointer-events: none;
         }
     }
