@@ -25,7 +25,7 @@ export const Home = () => {
                 <div className="mediaListSliderContainer">
                     <div>
                         <h3>MOST LIKED</h3>
-                        <MediaListSlider media={dataSlider}/>
+                        <MediaListSlider media={dataSlider.filter(media => media.percentageOfLikes >= 89)}/>
                     </div>
                     <div>
                         <h3>NEW RELEASES</h3>

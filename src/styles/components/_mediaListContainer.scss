@@ -6,10 +6,7 @@
         flex-direction: row;
         gap: 10px;
     }
-    .mediaList {
-        display: flex;
-        flex-wrap: wrap;
-    }
+
     .mediaItem {
         cursor: pointer;
         margin: 15px 0;
@@ -23,5 +20,20 @@
     }
     h3 {
         font-size: 30px;
+    }
+}    
+
+.mediaList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    .item {
+        width: 12.5%;
+        cursor: pointer;
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 }

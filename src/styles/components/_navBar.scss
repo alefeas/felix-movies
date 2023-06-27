@@ -1,4 +1,5 @@
-.navBar {
+.navBarHome {
+    transition: .5s;
     height: 70px;
     align-items: center;                
     color: black;
@@ -7,17 +8,11 @@
     font-size: 18px;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;    z-index: 1;
+    top: 0;    
+    z-index: 1;
     width: 100%;
-    .darkNavBar {
+    .active {
         background-color: #141414;
-    }
-    a {
-        transition: .5s;
-        &:hover {
-            color: black;
-            transition: .5s;
-        }
     }
     .linksNavContainer {
         display: flex;
@@ -46,5 +41,19 @@
         border: 1px solid black;
         border-radius: 10px; 
         font-family: 'Chakra Petch', sans-serif;
+    }
+}
+.active {
+    background-color: #141414;
+    color: white !important;
+    border-bottom: 1px solid white;
+    a {
+        color: white !important;
+    }
+    .inputSearch{
+        border-color: white;
+    }
+    .userIcon {
+        @extend .inputSearch
     }
 }
