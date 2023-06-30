@@ -1,11 +1,8 @@
 .homeCoverImageContainer {
-    position: absolute;
-    z-index: -1;
-    top: 0;
     min-width: 100%;
     img {
         width: 100%;
-        }
+    }
 }
 .sliderContainer {
     display: flex;

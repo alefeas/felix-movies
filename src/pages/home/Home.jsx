@@ -1,18 +1,27 @@
 import { MediaListSlider } from "../../components/mediaListSlider/MediaListSlider.jsx"
 import { useEffect, useState } from "react"
-import { firestoreFetch } from "../../fetch/firestoreFetch.js"
+import { firestoreFetchCategory } from "../../fetch/firestoreFetch.js"
 import { Loader } from "../../components/loader/Loader.jsx"
-
+    
 export const Home = () => {
     const [dataSlider, setDataSlider] = useState([])
 
     useEffect(() => {
-        firestoreFetch()
+        firestoreFetchCategory()
             .then(res => setDataSlider(res))
             .catch(err => console.log(err))
     }, [])
 
     const weeklyRecommendation = dataSlider.find(media => media.weeklyRecommendation === true)
+
+    const dateNewsReleases = '2022-11-22'
+    const dateOldReleases = '2006-11-22'
+    const dateNews = new Date(dateNewsReleases)
+    const dateOlds = new Date(dateOldReleases)
+    const timestampNews = Math.floor(dateNews.getTime() / 1000)
+    const timestampOlds = Math.floor(dateOlds.getTime() / 1000)
+
+    
 
     return (
         <div>
@@ -20,7 +29,7 @@ export const Home = () => {
             dataSlider.length > 0 ?    
             <div>
                 <div className="homeCoverImageContainer">
-                    <img src={weeklyRecommendation.coverImage} alt="Avatar: The Way of Water" />
+                    <img src={weeklyRecommendation.coverImage} alt={weeklyRecommendation.title} />
                 </div>
                 <div className="mediaListSliderContainer">
                     <div>
@@ -29,7 +38,7 @@ export const Home = () => {
                     </div>
                     <div>
                         <h3>NEW RELEASES</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.releaseYear >= 2022)}/>
+                        <MediaListSlider media={dataSlider.filter(media => media.releaseTimestamp > timestampNews)}/>
                     </div>
                     <div>
                         <h3>ANIMATED</h3>
@@ -37,7 +46,7 @@ export const Home = () => {
                     </div>
                     <div>
                         <h3>OLD RELEASES</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.releaseYear <= 2006 )}/>
+                        <MediaListSlider media={dataSlider.filter(media => media.releaseTimestamp < timestampOlds)}/>
                     </div>
                 </div>
             </div>

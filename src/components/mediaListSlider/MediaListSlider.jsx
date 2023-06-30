@@ -23,6 +23,7 @@ export const MediaListSlider = ({media}) => {
               key={media.id}
               image={media.image}
               title={media.title}
+              releaseTimestamp={media.releaseTimestamp}
           />
       ))}
       </ul>

@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
-import { useState } from 'react';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -47,19 +46,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export const NavBar = () => {
-    const [colorNavBar, setColorNavBar] = useState(false)
-
-    const changeNavColor = () => {
-        if(window.scrollY >= 200) {
-            setColorNavBar(true)
-        } else {
-            setColorNavBar(false)
-        }
-    }
-    window.addEventListener('scroll', changeNavColor)
-    
     return (
-    <nav className={colorNavBar ? 'navBarHome active' : 'navBarHome'}>
+    <nav className='navBarHome'>
         <div className='linksNavContainer'>
             <Link to='/' className="" href="#"><span className='logoNav'>FELIX</span></Link>
             <div>

@@ -10,6 +10,7 @@ export const MediaList = ({media}) => {
                         key={media.id}
                         image={media.image}
                         title={media.title}
+                        releaseTimestamp={media.releaseTimestamp}
                         />
                     </div>
                 ))

@@ -13,7 +13,7 @@ export const AppRoutes = () => {
             <Route path='/series' element={<Series/>}/>
             <Route path='/series/:idCategory' element={<Series/>}/>
             <Route path='/my-list' element={<Series/>}/>
-            <Route path='/*' element={<NotFound/>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     )
 }
