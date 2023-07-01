@@ -21,8 +21,6 @@ export const Home = () => {
     const timestampNews = Math.floor(dateNews.getTime() / 1000)
     const timestampOlds = Math.floor(dateOlds.getTime() / 1000)
 
-    
-
     return (
         <div>
             {
@@ -34,7 +32,7 @@ export const Home = () => {
                 <div className="mediaListSliderContainer">
                     <div>
                         <h3>MOST LIKED</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.percentageOfLikes >= 89)}/>
+                        <MediaListSlider media={dataSlider.filter(media => media.percentageOfLikes >= 90)}/>
                     </div>
                     <div>
                         <h3>NEW RELEASES</h3>

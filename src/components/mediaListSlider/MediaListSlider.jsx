@@ -21,9 +21,12 @@ export const MediaListSlider = ({media}) => {
       {media.slice(0, 12).map(media => (
           <MediaItem 
               key={media.id}
+              id={media.id}
               image={media.image}
+              coverImage={media.coverImage}
               title={media.title}
               releaseTimestamp={media.releaseTimestamp}
+              synopsis={media.synopsis}
           />
       ))}
       </ul>

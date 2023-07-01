@@ -17,7 +17,7 @@ export const firestoreFetchCategory = async (idCategory) => {
 }
 
 export const firestoreFetchItem = async (idItem) => {
-    const docRef = doc(db, 'products', idItem)
+    const docRef = doc(db, 'media', idItem)
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists) {

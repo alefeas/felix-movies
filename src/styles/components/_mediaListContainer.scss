@@ -1,3 +1,4 @@
+
 .mediaListSliderContainer {
     margin: 10px 20px;
     .mediaListSlider {
@@ -47,4 +48,18 @@
     &:hover {
         color: #612f2f;
     }
+}
+.modalCoverImage {
+    width: 100%;
+}
+.modalPlayButton {
+    background-color: transparent;
+    border: none;
+    color: #141414;
+    cursor: pointer;
+    position: absolute;
+    left: 43%;
+}
+.playArrow {
+    font-size:30px !important;
 }

@@ -8,9 +8,12 @@ export const MediaList = ({media}) => {
                     <div className='item'>
                         <MediaItem 
                         key={media.id}
+                        id={media.id}
                         image={media.image}
                         title={media.title}
                         releaseTimestamp={media.releaseTimestamp}
+                        coverImage={media.coverImage}
+                        synopsis={media.synopsis}
                         />
                     </div>
                 ))
