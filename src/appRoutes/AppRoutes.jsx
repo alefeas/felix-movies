@@ -4,6 +4,7 @@ import { Movies } from "../pages/movies/Movies.jsx"
 import { Series } from "../pages/series/Series.jsx"
 import { NotFound } from "../pages/notFound/NotFound.jsx"
 import { MediaView } from "../components/mediaView/MediaView.jsx"
+import { MyList } from "../pages/myList/MyList.jsx"
 
 export const AppRoutes = () => {
     return (
@@ -14,7 +15,7 @@ export const AppRoutes = () => {
             <Route path='/movies/:idCategory' element={<Movies/>}/>
             <Route path='/series' element={<Series/>}/>
             <Route path='/series/:idCategory' element={<Series/>}/>
-            <Route path='/my-list' element={<Series/>}/>
+            <Route path='/my-list' element={<MyList/>}/>
             <Route path='*' element={<NotFound/>}/>
         </Routes>
     )
