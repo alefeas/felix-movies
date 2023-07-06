@@ -40,6 +40,26 @@
         padding: 5px;
         border-radius: 50%;
         border: 1px solid white;
+        cursor: pointer;
+        transition: .5s;
+        &:hover {
+            color: #141414;
+            border-color: #141414;
+            background-color: white;
+        }
+    }
+    .searchIcon {
+        margin-top: 5px;
+        padding: 5px;
+        border: 1px solid white;
+        border-radius: 50%;
+        font-size: 38px !important;
+        transition: .5s;
+        &:hover {
+            color: #141414;
+            border-color: #141414;
+            background-color: white;
+        }
     }
     .searchContainer {
         gap: 20px;       

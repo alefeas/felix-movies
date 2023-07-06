@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import './styles/styles.scss'
 
 function App() {
-return (
+  return (
     <div className="App">
       <FavoritesContextProvider>
         <BrowserRouter>
