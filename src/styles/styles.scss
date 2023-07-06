@@ -15,6 +15,7 @@
 
 //GENERAL STYLES
 * {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,4 +25,20 @@
 a {
     text-decoration: none;
     color: black;
+}
+.Toastify__toast-container {
+    margin-top: 70px;
+    width: 270px;
+}
+.Toastify__toast-theme--dark {
+    border: 1px solid #141414;
+    background-color: white;
+    color: black;
+    border-radius:5px;
+}
+.Toastify__progress-bar {
+    background-color: white;
+}
+.Toastify__close-button {
+    display: none;
 }

@@ -10,7 +10,7 @@ export const AppRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/:idItem' element={<MediaView/>}/>
+            <Route path='/media/:idItem' element={<MediaView/>}/>
             <Route path='/movies' element={<Movies/>}/>
             <Route path='/movies/:idCategory' element={<Movies/>}/>
             <Route path='/series' element={<Series/>}/>

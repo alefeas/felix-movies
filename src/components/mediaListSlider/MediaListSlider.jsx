@@ -8,7 +8,7 @@ export const MediaListSlider = ({media}) => {
 
   return (
     <div className="sliderContainer">
-      <button onClick={() => prev()} className="prevButton"><ArrowLeftIcon fontSize="large"/></button>
+      <button onClick={() => prev()} className="prevButton"><ArrowLeftIcon className="arrowSlider"/></button>
       <ul
       ref={scrollRef}
       style={{
@@ -30,7 +30,7 @@ export const MediaListSlider = ({media}) => {
           />
       ))}
       </ul>
-      <button onClick={() => next()} className="nextButton"><ArrowRightIcon fontSize="large"/></button>
+      <button onClick={() => next()} className="nextButton"><ArrowRightIcon className="arrowSlider"/></button>
     </div>
   )
 }

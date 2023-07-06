@@ -11,6 +11,7 @@ import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { FavoritesContext } from '../../context/FavoritesContext.jsx'
+import { Loader } from '../loader/Loader.jsx'
 
 const style = {
     position: 'absolute',
@@ -31,16 +32,20 @@ export const MediaItem = (media) => {
     const [open, setOpen] = useState(false)
     const [year, setYear] = useState('')
     const [favorite, setFavorite] = useState(false)
+    const [loading, setLoading] = useState(false)
     
     const favoritesCtx = useContext(FavoritesContext)
     const itemFound = favoritesCtx.favoritesList.filter(item => media.id === item.id)
 
     const handleOpen = (timestamp) => {
+        setTimeout(() => {
+            setLoading(true)
+        }, 500);
         const dateFormat = timestamp*1000
         const date = new Date(dateFormat)
         const year = date.toString().split(' ')
         setYear(year[3])
-        if (itemFound.length !== 0 || window.location.pathname === '/my-list') {
+        if (itemFound.length !== 0) {
             setFavorite(true)
         }
         setOpen(true)
@@ -66,12 +71,12 @@ export const MediaItem = (media) => {
     return (
         <div className="mediaItem">
             <img onClick={() => handleOpen(media.releaseTimestamp)} src={media.image} alt={media.title} />
-            <Modal
+                <Modal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-            >
+                >
                 <Box sx={style}>
                 <div>
                 <button className='modalCloseButton' onClick={handleClose}><CloseIcon/></button>
@@ -81,6 +86,7 @@ export const MediaItem = (media) => {
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                     {media.title} ({year})
                 </Typography>
+                    <Link to={`/media/${media.id}`}><button className='playButton'><span className="textButton">PLAY MOVIE</span><PlayArrowIcon className="playArrow"/></button></Link>
                 <Button onClick={addToFavorite}>
                     {
                         itemFound.length === 0 && window.location.pathname !== '/my-list'?
@@ -88,7 +94,6 @@ export const MediaItem = (media) => {
                         : <FavoriteIcon/>
                     }
                 </Button>
-                <Link to={`/${media.id}`}><PlayArrowIcon className='playArrow'/></Link>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                     {media.synopsis}
                 </Typography>

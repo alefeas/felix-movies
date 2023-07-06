@@ -12,16 +12,16 @@ export const Footer = () => {
                 <Link to='/' className="" href="#"><span className='logoFooter'>FELIX</span></Link>
                 <div className='copyrightCreditsContainer'>
                     <span>Copyright © 2023 - FELIX</span>
-                    <div>
-                        <span>Desarrollado y diseñado por Alejo Feas Matej</span>
-                        <span><GitHubIcon/></span>
+                    <div className='creditsContainer'>
+                        <span>Developed and designed by Alejo Feas Matej</span>
+                        <Link target='_blank' to='https://github.com/alefeas'><GitHubIcon className='gitHubIcon'/></Link>
                     </div>
                 </div>
                 <div className='containerSocialMedia'>
-                    <InstagramIcon fontSize='large' className='logoSocialMedia logoInstagram'/>
-                    <FacebookIcon fontSize='large' className='logoSocialMedia logoFacebook'/>
-                    <YouTubeIcon fontSize='large' className='logoSocialMedia logoYoutube'/>
-                    <TwitterIcon fontSize='large' className='logoSocialMedia logoTwitter'/>
+                    <Link target='_blank' to='https://instagram.com'><InstagramIcon fontSize='large' className='logoSocialMedia logoInstagram'/></Link>
+                    <Link target='_blank' to='https://facebook.com'><FacebookIcon fontSize='large' className='logoSocialMedia logoFacebook'/></Link>
+                    <Link target='_blank' to='https://youtube.com'><YouTubeIcon fontSize='large' className='logoSocialMedia logoYoutube'/></Link>
+                    <Link target='_blank' to='https://twitter.com'><TwitterIcon fontSize='large' className='logoSocialMedia logoTwitter'/></Link>
                 </div>
             </div>
             <div className='footerRightSideContainer'>

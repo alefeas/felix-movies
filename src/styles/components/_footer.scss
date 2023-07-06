@@ -40,21 +40,25 @@ footer {
                 cursor: pointer;
             }
             .logoFacebook {
+                transition: .5s;
                 &:hover {
                     color: #4267B2;
                 }
             }
             .logoYoutube {
+                transition: .5s;
                 &:hover {
                     color: #FF0000;
                 }
             }
             .logoTwitter {
+                transition: .5s;
                 &:hover {
                     color: #1DA1F2;
                 }
             }
             .logoInstagram {
+                transition: .5s;
                 &:hover {
                     color: rgb(255, 208, 80);
                 }
@@ -63,6 +67,19 @@ footer {
         .copyrightCreditsContainer {
             display: flex;
             flex-direction: column;
+            .creditsContainer {
+                display: flex;
+                align-items: center;
+                .gitHubIcon {
+                    color: white;
+                    margin-left: 5px;
+                    font-size: 26px;
+                    transition: .5s;
+                    &:hover {
+                        color: #6e5494;
+                    }
+                }
+            }    
         }
     }
 }

@@ -17,10 +17,10 @@ export const MediaView = () => {
     return (
         <>
         {
-            data.trailer ?
+            data.video ?
             <>
                 <Link to={`/`} className="exitMovie">Go back</Link>
-                <video autoPlay controls poster={data.coverImage} src={data.trailer}></video>
+                <video autoPlay controls poster={data.coverImage} src={data.video}></video>
             </>
             : <Loader/>
         }

@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { createContext } from "react"
 import { useLocalStorage } from "../hooks/useLocalStorage.js"
 export const FavoritesContext = createContext()
@@ -18,17 +20,33 @@ export const FavoritesContextProvider = ({children}) => {
                     coverImage:item.coverImage,
                     releaseTimestamp:item.releaseTimestamp
             }])
+            toast('❤️ ADD TO FAVORITES', {
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                theme: "dark",
+                className: "toast"
+            });
         }
     }
     const removeItem = (id) => {
         let result = favoritesList.filter(item => item.id !== id)
         setFavoritesList(result)
+        toast('💔 REMOVED FROM FAVORITES', {
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "dark",
+            className: "toast"
+        });
     }
     const clear = () => {
         if (favoritesList.length > 0) {
             setFavoritesList([])
-        } else {
-
         }
     }
     return(
