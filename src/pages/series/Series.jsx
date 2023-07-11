@@ -24,7 +24,7 @@ export const Series = () => {
         firestoreFetchCategory(idCategory)
         .then(res => setData(res))
         .catch(err => console.log(err))
-        if (idCategory !== undefined && idCategory !== 'animated' && idCategory !== 'drama' && idCategory !== 'comedy' && idCategory !== 'documentary') {
+        if (idCategory !== undefined && idCategory !== 'animated' && idCategory !== 'drama' && idCategory !== 'comedy' && idCategory !== 'documentary' && idCategory !== 'action') {
             window.history.replaceState(null, "New Page Title", "/404")
             window.location.reload()
         }
@@ -39,7 +39,7 @@ export const Series = () => {
                     <Box sx={{ maxWidth: 320 }}>
                     <FormControl  style={{margin:'20px'}} fullWidth>
                         {
-                        window.location.pathname === '/series' ?
+                        idCategory === undefined ?
                         <> 
                         <InputLabel id="demo-simple-select-label">Category</InputLabel>
                         <Select
@@ -50,8 +50,7 @@ export const Series = () => {
                         onChange={handleChange}
                         > 
                         <ul>
-                        <li value={'all-series'}><Link to={`/series`}>All series</Link></li>
-                        <li value={'animated'}><Link to={`/series/animated`}>Animated</Link></li>
+                        <li value={'action'}><Link to={`/series/action`}>Action</Link></li>
                         <li value={'documentary'}><Link to={`/series/documentary`}>Documentary</Link></li>
                         <li value={'comedy'}><Link to={`/series/comedy`}>Comedy</Link></li>
                         <li value={'drama'}><Link to={`/series/drama`}>Drama</Link></li>

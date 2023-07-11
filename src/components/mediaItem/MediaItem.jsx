@@ -11,7 +11,6 @@ import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { FavoritesContext } from '../../context/FavoritesContext.jsx'
-import { Loader } from '../loader/Loader.jsx'
 
 const style = {
     position: 'absolute',
@@ -32,15 +31,11 @@ export const MediaItem = (media) => {
     const [open, setOpen] = useState(false)
     const [year, setYear] = useState('')
     const [favorite, setFavorite] = useState(false)
-    const [loading, setLoading] = useState(false)
     
     const favoritesCtx = useContext(FavoritesContext)
     const itemFound = favoritesCtx.favoritesList.filter(item => media.id === item.id)
 
     const handleOpen = (timestamp) => {
-        setTimeout(() => {
-            setLoading(true)
-        }, 500);
         const dateFormat = timestamp*1000
         const date = new Date(dateFormat)
         const year = date.toString().split(' ')

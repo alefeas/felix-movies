@@ -26,6 +26,9 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        a {
+            color: white;
+        }
         .logoFooter {
             color: white;
             margin-bottom: -5px;

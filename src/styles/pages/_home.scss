@@ -53,14 +53,14 @@
     justify-content: center;
     button {
         background-color: white;    
-        border: none;
         cursor: pointer;
-        margin-bottom: 5px;
-        width: 3%;
         transition: .5s;
+        border: .1vw solid white;
+        margin-bottom: 5px;
         &:hover {
-            transition: .5s;
-            background-color: #612f2f;
+            color: white;
+            border: .1vw solid white;
+            background-color: #141414;
         }
     }
     .arrowSlider {
@@ -68,10 +68,10 @@
     }
     .nextButton {
         right: 0;
-        margin-left: 7.5px;
+        margin-left: .5vw;
     }
     .prevButton {
-        margin-right: 7.5px;
+        margin-right: .5vw;
         left: 0;
     }
 }

@@ -24,7 +24,7 @@ export const Movies = () => {
         firestoreFetchCategory(idCategory)
             .then(res => setData(res))
             .catch(err => console.log(err))
-            if (idCategory !== undefined && idCategory !== 'satire' && idCategory !== 'action' && idCategory !== 'adventure' && idCategory !== 'super-heros' && idCategory !== 'fantasy' && idCategory !== 'science-fiction') {
+            if (idCategory !== undefined && idCategory !== 'satire' && idCategory !== 'action' && idCategory !== 'adventure' && idCategory !== 'super-heros' && idCategory !== 'fantasy' && idCategory !== 'science-fiction' && idCategory !== 'romance' && idCategory !== 'suspense' && idCategory !== 'comedy') {
                 window.history.replaceState(null, "New Page Title", "/404")
                 window.location.reload()
             }
@@ -52,11 +52,13 @@ export const Movies = () => {
                 <ul>
                     <li value={'action'}><Link to='/movies/action'>Action</Link></li>
                     <li value={'adventure'}><Link to='/movies/adventure'>Adventure</Link></li>
-                    <li value={'animated'}><Link to='/movies/animated'>Animated</Link></li>
+                    <li value={'comedy'}><Link to='/movies/comedy'>Comedy</Link></li>
                     <li value={'fantasy'}><Link to='/movies/fantasy'>Fantasy</Link></li>
+                    <li value={'romance'}><Link to='/movies/romance'>Romance</Link></li>
                     <li value={'satire'}><Link to='/movies/satire'>Satire</Link></li>
                     <li value={'science-fiction'}><Link to='/movies/science-fiction'>Science fiction</Link></li>
                     <li value={'super-heros'}><Link to='/movies/super-heros'>Super heros</Link></li>
+                    <li value={'suspense'}><Link to='/movies/suspense'>Suspense</Link></li>
                 </ul>
                 </Select>
                 </>

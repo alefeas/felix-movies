@@ -16,13 +16,13 @@ export const Home = () => {
 
     const weeklyRecommendation = dataSlider.find(media => media.weeklyRecommendation === true)
 
-    const dateNewsReleases = '2022-02-10'
+    const dateNewsReleases = '2022-06-10'
     const dateOldReleases = '2008-01-01'
     const dateNews = new Date(dateNewsReleases)
     const dateOlds = new Date(dateOldReleases)
     const timestampNews = Math.floor(dateNews.getTime() / 1000)
     const timestampOlds = Math.floor(dateOlds.getTime() / 1000)
-
+    console.log(timestampNews);
     return (
         <div>
             {
@@ -39,19 +39,19 @@ export const Home = () => {
                 <div className="mediaListSliderContainer">
                     <div>
                         <h3>MOST LIKED</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.percentageOfLikes >= 90)}/>
+                        <MediaListSlider maxItems={12} media={dataSlider.filter(media => media.percentageOfLikes >= 90)}/>
                     </div>
                     <div>
                         <h3>NEW RELEASES</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.releaseTimestamp >= timestampNews)}/>
+                        <MediaListSlider maxItems={12} media={dataSlider.filter(media => media.releaseTimestamp >= timestampNews)}/>
                     </div>
                     <div>
                         <h3>ADVENTURE</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.category.includes('adventure'))}/>
+                        <MediaListSlider maxItems={12} media={dataSlider.filter(media => media.category === 'adventure')}/>
                     </div>
                     <div>
                         <h3>OLD RELEASES</h3>
-                        <MediaListSlider media={dataSlider.filter(media => media.releaseTimestamp <= timestampOlds)}/>
+                        <MediaListSlider maxItems={12} media={dataSlider.filter(media => media.releaseTimestamp <= timestampOlds)}/>
                     </div>
                 </div>
             </div>

@@ -1,16 +1,83 @@
-video {
-    background-color: black;
-    position: absolute;
-    min-width: 100vw;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    z-index: 2;
-}
-.exitMovie {
-    position: absolute;
-    z-index: 3;
-    left: 2vh;
-    top: 2vh;
-    color: white;
+.viewContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 3vh;
+    margin: 3vh 7.5vh;
+    img {
+        width: 14vw;
+        cursor: pointer;
+    }
+    h3 {
+        color: white;
+        font-size: 2.4vw;
+    }
+    p {
+        font-size: 1vw;
+    }
+    .releaseYear {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: .8vw;
+    }
+    .percentageOfLikes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: .2vh solid white;
+        border-radius: 50%;
+        font-size: 1.8vh;
+        width: 3.5vw;
+        height: 7vh;
+        margin-top: 1vh;
+    }
+    video {
+        width: 100%;
+    }
+    .synopsisCategoryContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;   
+    }
+    .movieInfoContainer {
+        display: flex;
+        gap: 2.5vw;
+        .dataMovie {
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+            width: 40vw;    
+        }
+        img {
+            width: 13vw;
+        }
+    }
+    .ThumbUpOffAltIcon {
+        margin-left: .1vw;
+        font-size: 1.1vw;
+    }
+    .shareContainer {
+        position: absolute;
+        right: 4.5vw;
+        display: flex;
+        flex-direction: column;
+        div {
+            display: flex;
+            gap: .2vw;
+            .shareIcon {
+                font-size: 1.8vw;
+            }    
+            .wppIcon {
+                color: #2BB741 !important;
+            }
+            .twitterIcon {
+                color: #1DA1F2 !important;
+            }
+        }
+        a {
+            cursor: pointer;
+        }
+        span {
+            font-size: 1.5vw;
+        }
+    }
 }
