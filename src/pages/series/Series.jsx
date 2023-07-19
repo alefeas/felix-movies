@@ -3,28 +3,21 @@ import { useParams } from "react-router-dom"
 import { firestoreFetchCategory } from "../../fetch/firestoreFetch.js"
 import { MediaList } from "../../components/mediaList/MediaList.jsx"
 import { Loader } from "../../components/loader/Loader.jsx"
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { Link } from 'react-router-dom';
+import * as React from 'react'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Link } from 'react-router-dom'
+import Select from '@mui/joy/Select';
+import Option from '@mui/joy/Option';
 
 export const Series = () => {
     const [data, setData] = useState([])
     const { idCategory } = useParams()
 
-    const [category, setCategory] = useState('')
-
-    const handleChange = (event) => {
-        setCategory(event.target.value);
-    }
-    
     useEffect(() => {
         firestoreFetchCategory(idCategory)
         .then(res => setData(res))
         .catch(err => console.log(err))
-        if (idCategory !== undefined && idCategory !== 'animated' && idCategory !== 'drama' && idCategory !== 'comedy' && idCategory !== 'documentary' && idCategory !== 'action') {
+        if (idCategory !== undefined && idCategory !== 'drama' && idCategory !== 'comedy' && idCategory !== 'documentary' && idCategory !== 'action') {
             window.history.replaceState(null, "New Page Title", "/404")
             window.location.reload()
         }
@@ -35,32 +28,19 @@ export const Series = () => {
             {
                 data.length > 0 ?
                 <>
-                    <h3>MOVIES</h3>
-                    <Box sx={{ maxWidth: 320 }}>
-                    <FormControl  style={{margin:'20px'}} fullWidth>
-                        {
-                        idCategory === undefined ?
-                        <> 
-                        <InputLabel id="demo-simple-select-label">Category</InputLabel>
-                        <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        value={category}
-                        label="Category"
-                        onChange={handleChange}
-                        > 
-                        <ul>
-                        <li value={'action'}><Link to={`/series/action`}>Action</Link></li>
-                        <li value={'documentary'}><Link to={`/series/documentary`}>Documentary</Link></li>
-                        <li value={'comedy'}><Link to={`/series/comedy`}>Comedy</Link></li>
-                        <li value={'drama'}><Link to={`/series/drama`}>Drama</Link></li>
-                        </ul>
-                        </Select>
-                        </>
-                        : <Link to='/series'>Back</Link>
-                        }
-                    </FormControl>
-                    </Box>
+                    {
+                    idCategory === undefined ?
+                    <div className="titleSelectContainer">
+                    <h3 className="typeTitle">SERIES</h3>
+                    <Select placeholder="Categories" className="categorySelect">
+                        <Link to='/series/action'><Option value="action">Action</Option></Link>
+                        <Link to='/series/comedy'><Option value="comedy">Comedy</Option></Link>
+                        <Link to='/series/documentary'><Option value="documentary">Documentary</Option></Link>
+                        <Link to='/series/drama'><Option value="drama">Drama</Option></Link>
+                    </Select>
+                    </div>
+                    : <h3 className="backToMedia"><Link className="mediaLink" to='/series'>SERIES</Link> <ChevronRightIcon className="ChevronRightIcon"/> {idCategory.toUpperCase()}</h3>
+                    }
                     <MediaList media={data.filter(media => media.type === 'serie')}/>
                 </>
                 : <Loader/>

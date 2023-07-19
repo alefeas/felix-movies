@@ -15,6 +15,7 @@ export const FavoritesContextProvider = ({children}) => {
                 {
                     id:item.id,
                     title:item.title,
+                    type:item.type,
                     image:item.image,
                     synopsis:item.synopsis,
                     coverImage:item.coverImage,

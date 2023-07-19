@@ -4,22 +4,15 @@ import { firestoreFetchCategory } from "../../fetch/firestoreFetch.js"
 import { MediaList } from "../../components/mediaList/MediaList.jsx"
 import { Loader } from "../../components/loader/Loader.jsx"
 import * as React from 'react'
-import Box from '@mui/material/Box'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom'
+import Select from '@mui/joy/Select';
+import Option from '@mui/joy/Option';
 
 export const Movies = () => {
     const [data, setData] = useState([])
     const { idCategory } = useParams()
 
-    const [category, setCategory] = useState('')
-
-    const handleChange = (event) => {
-        setCategory(event.target.value)
-    };
-    
     useEffect(() => {
         firestoreFetchCategory(idCategory)
             .then(res => setData(res))
@@ -27,7 +20,7 @@ export const Movies = () => {
             if (idCategory !== undefined && idCategory !== 'satire' && idCategory !== 'action' && idCategory !== 'adventure' && idCategory !== 'super-heros' && idCategory !== 'fantasy' && idCategory !== 'science-fiction' && idCategory !== 'romance' && idCategory !== 'suspense' && idCategory !== 'comedy') {
                 window.history.replaceState(null, "New Page Title", "/404")
                 window.location.reload()
-            }
+            }   
     }, [idCategory])
 
     return (
@@ -35,37 +28,27 @@ export const Movies = () => {
             {
             data.length > 0 ? 
             <>
-            <h3>MOVIES</h3>
-            <Box sx={{ maxWidth: 320 }}>
-            <FormControl  style={{margin:'20px'}} fullWidth>
                 {
-                idCategory === undefined ?
-                <> 
-                <InputLabel id="demo-simple-select-label">Category</InputLabel>
-                <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={category}
-                label="Category"
-                onChange={handleChange}
-                > 
-                <ul>
-                    <li value={'action'}><Link to='/movies/action'>Action</Link></li>
-                    <li value={'adventure'}><Link to='/movies/adventure'>Adventure</Link></li>
-                    <li value={'comedy'}><Link to='/movies/comedy'>Comedy</Link></li>
-                    <li value={'fantasy'}><Link to='/movies/fantasy'>Fantasy</Link></li>
-                    <li value={'romance'}><Link to='/movies/romance'>Romance</Link></li>
-                    <li value={'satire'}><Link to='/movies/satire'>Satire</Link></li>
-                    <li value={'science-fiction'}><Link to='/movies/science-fiction'>Science fiction</Link></li>
-                    <li value={'super-heros'}><Link to='/movies/super-heros'>Super heros</Link></li>
-                    <li value={'suspense'}><Link to='/movies/suspense'>Suspense</Link></li>
-                </ul>
-                </Select>
-                </>
-                : <Link to='/movies'>Back</Link>
+                    idCategory === undefined ?
+                    <div className="titleSelectContainer">
+                    <h3 className="typeTitle">MOVIES</h3>
+                    <Select placeholder="Categories" className="categorySelect">
+                        <Link to='/movies/action'><Option value="action">Action</Option></Link>
+                        <Link to='/movies/adventure'><Option value="adventure">Adventure</Option></Link>
+                        <Link to='/movies/comedy'><Option value="comedy">Comedy</Option></Link>
+                        <Link to='/movies/fantasy'><Option value="fantasy">Fantasy</Option></Link>
+                        <Link to='/movies/romance'><Option value="romance">Romance</Option></Link>
+                        <Link to='/movies/satire'><Option value="satire">Satire</Option></Link>
+                        <Link to='/movies/science-fiction'><Option value="science-fiction">Science fiction</Option></Link>
+                        <Link to='/movies/super-heros'><Option value="super-heros">Super heros</Option></Link>
+                        <Link to='/movies/suspense'><Option value="suspense">Suspense</Option></Link>
+                    </Select>
+                    </div>
+                : 
+                <div>
+                    <h3 className="backToMedia"><Link className="mediaLink" to='/movies'>MOVIES</Link> <ChevronRightIcon className="ChevronRightIcon"/> {idCategory.toUpperCase()}</h3>
+                </div>
                 }
-            </FormControl>
-            </Box>
             <MediaList media={data.filter(media => media.type === 'movie')}/>
             </>
             : <Loader/>

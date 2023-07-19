@@ -1,0 +1,43 @@
+.notFoundContainer {
+    display: flex;
+    justify-content: center;
+    min-height: 30vw;
+    font-size: 4vw;
+    span {
+        display: flex;
+        align-items: center;
+        .ErrorOutlineOutlinedIcon {
+            margin-left: .5vw;
+            font-size: 4vw;
+        }
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    .notFoundContainer {
+        span {
+            font-size: 50px;
+        }
+    }
+}
+@media only screen and (max-width: 1440px) {
+    .notFoundContainer {
+        span {
+            font-size: 40px;
+        }
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .notFoundContainer {
+        span {
+            font-size: 30px;
+        }
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .notFoundContainer {
+        span {
+            font-size: 24px;
+        }
+    }
+}

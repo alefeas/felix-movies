@@ -7,9 +7,9 @@ export const MyList = () => {
     const favoritesCtx = useContext(FavoritesContext)
 
     return (
-        <>
+        <div className='myListContainer'>
             <h3>MY LIST</h3>
-            <div className='mediaList'>
+            <div className='mediaList myList'>
                 {
                     favoritesCtx.favoritesList.length > 0 ?
                     favoritesCtx.favoritesList.map(media => (
@@ -19,6 +19,7 @@ export const MyList = () => {
                             id={media.id}
                             image={media.image}
                             title={media.title}
+                            type={media.type}
                             releaseTimestamp={media.releaseTimestamp}
                             coverImage={media.coverImage}
                             synopsis={media.synopsis}
@@ -28,6 +29,6 @@ export const MyList = () => {
                     : <span>Favorites list it is empty.</span>
                 }
             </div>
-        </>
+        </div>
     )
 }

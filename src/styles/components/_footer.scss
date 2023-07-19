@@ -86,3 +86,28 @@ footer {
         }
     }
 }
+
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 800px) {
+    footer {
+        gap: 20px;
+        flex-direction: column;
+        .footerRightSideContainer {
+            text-align: left;
+        }    
+        .copyrightCreditsContainer {
+            gap: 5px;
+            .creditsContainer {
+                width: 250px;
+                margin-bottom: 10px;
+                .gitHubIcon {
+                    position: absolute;
+                    left: 100px;
+                    margin-left: 0;
+                    font-size: 20px;
+                }
+            }        
+        }
+    }
+}

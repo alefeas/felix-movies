@@ -1,12 +1,22 @@
 .viewContainer {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    gap: 3vh;
-    margin: 3vh 7.5vh;
-    img {
-        width: 14vw;
-        cursor: pointer;
+    margin: 2vw auto 0 auto;
+    gap: 1.5vw;
+    width: 79vw;
+    .movieImg {
+        width: 14vw !important;
+    }
+    .infoShareContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .slider {
+        img {
+            width: 14vw;
+            cursor: pointer;
+        }
     }
     h3 {
         color: white;
@@ -23,12 +33,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: .2vh solid white;
+        border: .1vw solid white;
         border-radius: 50%;
-        font-size: 1.8vh;
-        width: 3.5vw;
-        height: 7vh;
-        margin-top: 1vh;
+        font-size: .9vw;
+        height: 4vw;
+        width: 4vw;
+        margin-top: .5vw;
     }
     video {
         width: 100%;
@@ -36,19 +46,17 @@
     .synopsisCategoryContainer {
         display: flex;
         flex-direction: column;
-        gap: 2vh;   
+        gap: 1vw;   
     }
     .movieInfoContainer {
         display: flex;
-        gap: 2.5vw;
+        gap: 1.5vw;
         .dataMovie {
+            max-height: 1vw;
             display: flex;
             flex-direction: column;
-            gap: 1vh;
+            gap: .5vw;
             width: 40vw;    
-        }
-        img {
-            width: 13vw;
         }
     }
     .ThumbUpOffAltIcon {
@@ -56,10 +64,7 @@
         font-size: 1.1vw;
     }
     .shareContainer {
-        position: absolute;
-        right: 4.5vw;
-        display: flex;
-        flex-direction: column;
+        margin-left: auto;
         div {
             display: flex;
             gap: .2vw;
@@ -78,6 +83,166 @@
         }
         span {
             font-size: 1.5vw;
+        }
+    }
+}
+
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 1920px) {
+    .viewContainer {
+        width: 1516.8px;
+        .movieImg {
+            width: 259.19px !important;
+        }
+        .synopsisCategoryContainer {
+            gap: 20px;  
+        }
+        p {
+            font-size: 19px;
+        }
+        h3 {
+            font-size: 46px;
+        }
+        .dataMovie {
+            width: 768px !important; 
+        }
+        .percentageOfLikes {
+            font-size: 18px !important;
+            height: 76.8px !important;
+            width: 76.8px !important;
+        }
+        .movieInfoContainer {
+            gap: 30px;
+        }
+        .shareContainer {
+            .shareIcon {
+                font-size: 35px !important;
+            }
+            span {
+                font-size: 28px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .viewContainer {
+        width: 95vw;
+    }
+}
+@media only screen and (max-width: 1440px) {
+    .viewContainer {
+        .slider {
+            img {
+                width: 17vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .viewContainer {
+        .percentageOfLikes {
+            font-size: 16px !important;
+            height: 68.8px !important;
+            width: 68.8px !important;
+        }
+        .infoShareContainer {
+            flex-direction: column;
+        }
+        p {
+            font-size: 17px;
+        }
+        h3 {
+            font-size: 40px;
+        }
+        .synopsisCategoryContainer {
+            gap: 15px;
+        }
+        .shareContainer {
+            margin-left: 0;
+            .shareIcon {
+                font-size: 30px !important;
+            }
+            span {
+                font-size: 24px;
+            }
+        }
+        .dataMovie {
+            max-height: 320.78px !important;
+            padding-bottom: 5px;
+            overflow-y: auto;
+            width: 100% !important;
+        }
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .viewContainer {
+        .slider {
+            img {
+                width: 21vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px) { 
+    .viewContainer {
+        h3 {
+            font-size: 32px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .shareContainer {
+            .shareIcon {
+                font-size: 28px !important;
+            }
+            span {
+                font-size: 22px;
+            }
+        }
+        .movieInfoContainer {
+            gap: 20px;
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    .viewContainer {
+        .slider {
+            img {
+                width: 27.5vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .viewContainer {
+        h3 {
+            font-size: 24px;
+        }
+        .movieImg {
+            width: 200px !important;
+        }
+        .dataMovie {
+            max-height: 228px !important;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .viewContainer {
+        .slider {
+            img {
+                width: 40vw;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 400px) {
+    .viewContainer {
+        .movieImg {
+            width: 150px !important;
+        }
+        .dataMovie {
+            max-height: 153px !important;
         }
     }
 }

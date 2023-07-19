@@ -1,0 +1,157 @@
+.itemModal {
+    #modal-modal-title {
+        font-size: 1.3vw;
+    }
+    #modal-modal-description {
+        font-size: .85vw;
+    }
+    .playButton {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        border: .15vw solid #141414 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 9vw;
+        height: 2vw;
+        border-radius: 1vw;
+        font-size: 1vw;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .5s;
+        &:hover {
+            border: .15vw solid white !important;
+            background-color: #141414;
+            color: white;
+        }
+        .playArrow {
+            font-size: 1.5vw !important;
+        }
+    }
+    .likeButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2vw;
+        width: 2vw;
+        border-radius: 50%;
+        border: .1vw solid white;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        transition: .5s;
+        &:hover {
+            color: #141414;
+            background-color: white;
+        }
+        .favoriteIcon {
+            font-size: 1.1vw !important;
+        }
+    }
+    .playContainer {
+        width: 0;
+    }
+    .titleLikeButtonContainer {
+        display: flex;
+        gap: .5vw;
+        button {
+            min-width: 32px;
+        }
+    }
+    .closeButtonCoverImageContainer {
+        position: relative;
+        min-height: 22.7vw;
+        background-color: #141414;
+    }
+}
+
+.modal {
+    overflow-y: auto;
+}
+
+
+// RESPONSIVE DEISGN
+@media only screen and (max-width: 1920px) {
+    .itemModal {
+        max-height: 95% !important;
+        width: 768px !important;
+        .playButton {
+            bottom: 40px;
+            font-size: 19px;
+            width: 172px;
+            height: 38px;
+            border-radius: 19px;
+            border: 2px solid #141414 !important;
+            .playArrow {
+                font-size: 28px !important  ;
+            }
+        }
+        .likeButton {
+            border: 1px solid white;
+            height: 38px;
+            width: 38px;
+            .favoriteIcon {
+                font-size: 20px !important;
+            }
+        }
+        #modal-modal-title {
+            font-size: 24px;
+        }
+        #modal-modal-description {
+            font-size: 16px;
+        }
+        .closeButtonCoverImageContainer {
+            min-height: 432px;
+        }
+        .titleLikeButtonContainer {
+            gap: 10px;
+            }
+        .textModalContainer {
+            margin-top: -1px;
+            padding: 28px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .itemModal {
+        width: 95% !important;
+        .playButton {
+            bottom: 12.5%;
+            font-size: 16px;
+            height: 30px;
+            border-radius: 30px;
+            border: 1.5px solid #141414 !important;
+            .playArrow {
+                font-size: 26px !important  ;
+            }
+        }
+        .likeButton {
+            border: 1px solid white;
+            height: 32px;
+            width: 32px;
+        }
+        #modal-modal-title {
+            font-size: 24px;
+        }
+        #modal-modal-description {
+            font-size: 16px;
+        }
+        .closeButtonCoverImageContainer {
+            min-height: 54vw;
+        }
+        .textModalContainer {
+            padding: 24px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .itemModal {
+        #modal-modal-title {
+            font-size: 20px;
+        }
+    }
+}

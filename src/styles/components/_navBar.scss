@@ -61,7 +61,59 @@
             background-color: white;
         }
     }
+    .MuiToolbar-root {
+        padding-left: 0;
+    }
     .searchContainer {
         gap: 20px;       
+    }
+    .MuiSelect-indicator {
+        display: none;
+    }
+    .MuiSelect-button {
+        width: 40px;
+    }
+    .iconLink {
+        display: none;
+    }
+    }
+    .moreOptionsButton {
+        display: none;
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;    
+    }
+    .moreOptionsIcon {
+        margin-right: 5px;
+        font-size: 20px !important;
+    }
+
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 600px) {
+    .navBarHome {
+        gap: 0;
+        .linksNavContainer {
+            gap: 30px;
+            div {
+                gap: 0;
+            }
+        }
+        .typeSelect {
+            display: block !important;
+            margin-left: -20px;
+        }
+        .iconLink {
+            display: block;
+            margin-top: 5px;
+            margin-right: 20px;
+        }
+        .textLink {
+            display: none;
+        }
+        .moreOptionsButton {
+            display: block;
+        }
     }
 }

@@ -1,0 +1,38 @@
+.inputSearchContainer {
+    display: flex;
+    justify-content: center;
+    .inputSearch {
+        font-size: 1.5vw;
+        color: white;
+        background-color: transparent;
+        border: none;
+        border-bottom: .1vw solid white;
+        border-radius: 0;
+        outline: none;
+        height: 3vw;
+        margin: 1vw 0;
+        width: 95vw;
+    }
+}
+.noResults {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vw;
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .inputSearchContainer{
+        .inputSearch {
+            margin: 10px;
+            font-size: 16px;
+            height: 30px;
+        }
+    }
+    .noResults {
+        font-size: 18px;
+    }
+}

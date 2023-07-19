@@ -26,6 +26,7 @@ export const MediaListSlider = ({media, maxItems}) => {
                 image={media.image}
                 coverImage={media.coverImage}
                 title={media.title}
+                type={media.type}
                 releaseTimestamp={media.releaseTimestamp}
                 synopsis={media.synopsis}
             />

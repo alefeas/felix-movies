@@ -7,7 +7,6 @@ import CloseIcon from '@mui/icons-material/Close'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { FavoritesContext } from '../../context/FavoritesContext.jsx'
@@ -24,7 +23,9 @@ const style = {
     p: 0,
 }
 const styleBoxText = {
-    p:4,
+    width: 'auto',
+    p:'1.5vw',
+    bgcolor:'#141414'
 }
 
 export const MediaItem = (media) => {
@@ -65,30 +66,35 @@ export const MediaItem = (media) => {
     }
     return (
         <div className="mediaItem">
-            <img onClick={() => handleOpen(media.releaseTimestamp)} src={media.image} alt={media.title} />
+            <img onClick={() => handleOpen(media.releaseTimestamp)} src={media.coverImage} alt={media.title} />
                 <Modal
+                className='modal'
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 >
-                <Box sx={style}>
-                <div>
+                <Box className='itemModal' sx={style}>
+                <div className='closeButtonCoverImageContainer'>
+                <div className='playContainer'>
+                    <Link className='linkMedia' to={`/media/${media.id}`}><button className='playButton'><span className="textButton">PLAY {media.type.toUpperCase()}</span><PlayArrowIcon className="playArrow"/></button></Link>
+                </div>
                 <button className='modalCloseButton' onClick={handleClose}><CloseIcon/></button>
                 <img className='modalCoverImage' src={media.coverImage} alt={media.title} />
                 </div>
-                <Box sx={styleBoxText}>
+                <Box className='textModalContainer' sx={styleBoxText}>
+                <div className='titleLikeButtonContainer'>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
                     {media.title} ({year})
                 </Typography>
-                    <Link to={`/media/${media.id}`}><button className='playButton'><span className="textButton">PLAY MOVIE</span><PlayArrowIcon className="playArrow"/></button></Link>
-                <Button onClick={addToFavorite}>
+                <button className='likeButton' onClick={addToFavorite}>
                     {
                         itemFound.length === 0 && window.location.pathname !== '/my-list'?
-                        <FavoriteBorderIcon/>
-                        : <FavoriteIcon/>
+                        <FavoriteBorderIcon className='favoriteIcon'/>
+                        : <FavoriteIcon className='favoriteIcon'/>
                     }
-                </Button>
+                </button>
+                </div>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                     {media.synopsis}
                 </Typography>

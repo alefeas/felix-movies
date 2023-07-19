@@ -11,6 +11,7 @@ export const MediaList = ({media}) => {
                         id={media.id}
                         image={media.image}
                         title={media.title}
+                        type={media.type}
                         releaseTimestamp={media.releaseTimestamp}
                         coverImage={media.coverImage}
                         synopsis={media.synopsis}

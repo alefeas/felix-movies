@@ -35,10 +35,13 @@ export const MediaView = () => {
     return (
         <div className="viewContainer">
         {
-            data.video ?
+            data.video && data.image ?
             <>
                 <div className="movieInfoContainer">
-                    <img src={data.image} alt={data.title}/>
+                    <div>
+                    <img src={data.image} alt={data.title} className="movieImg"/>
+                    </div>
+                    <div className="infoShareContainer">
                     <div className="dataMovie">
                         <div>
                             <h3>{data.title} ({releaseYear})</h3>
@@ -46,7 +49,7 @@ export const MediaView = () => {
                     <div>
                         </div>
                         <div className="synopsisCategoryContainer">
-                            <p>{data.synopsis}</p>  
+                            <p className="synopsis">{data.synopsis}</p>  
                             <p>Genre: {data.category}</p>
                             {
                                 data.type === 'movie' ?
@@ -64,11 +67,12 @@ export const MediaView = () => {
                         <a href={`https://twitter.com/intent/tweet?text=Hello, i recommend you to watch "${data.title}" in FELIX. Here you have the link: ${window.location.href}`} target="blank"><TwitterAppIcon className="shareIcon twitterIcon"/></a>   
                         </div>
                     </div>
+                    </div>
                 </div>
                 <video className="movieVideo" poster={data.coverImage} controls src={data.video}></video>
-                <div>
+                <div className="slider">
                     <h3>MOST LIKED MOVIES</h3>
-                    <MediaListSlider maxItems={15} media={dataRecommended.filter(media => media.percentageOfLikes >= 87 && media.type === 'movie' && media.title !== data.title)}/>
+                    <MediaListSlider className='mediaViewSlider' maxItems={15} media={dataRecommended.filter(media => media.percentageOfLikes >= 87 && media.type === 'movie' && media.title !== data.title)}/>
                 </div>
             </>
             : <Loader/>
