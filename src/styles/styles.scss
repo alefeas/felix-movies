@@ -26,6 +26,11 @@
     box-sizing: border-box;
     font-family: 'Chakra Petch', sans-serif;
 }
+body {
+    background-color: #141414;
+    color: white;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -47,4 +52,19 @@ a {
 }
 .Toastify__close-button {
     display: none;
+}
+
+//SCROLLBAR
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar {
+    width:10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }

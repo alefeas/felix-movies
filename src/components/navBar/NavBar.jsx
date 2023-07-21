@@ -1,14 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 import ListIcon from '@mui/icons-material/List';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import HomeIcon from '@mui/icons-material/Home';
-import Select from '@mui/joy/Select';
-import Option from '@mui/joy/Option';
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MovieIcon from '@mui/icons-material/Movie';
@@ -50,8 +46,8 @@ export const NavBar = () => {
                         'aria-labelledby': 'basic-button',
                         }}
                     >
-                        <Link to='/'><MenuItem onClick={handleClose}><MovieIcon className='moreOptionsIcon'/>Movies</MenuItem></Link>
-                        <Link to='/'><MenuItem onClick={handleClose}><TvIcon className='moreOptionsIcon'/>Series</MenuItem></Link>
+                        <Link to='/movies'><MenuItem onClick={handleClose}><MovieIcon className='moreOptionsIcon'/>Movies</MenuItem></Link>
+                        <Link to='/series'><MenuItem onClick={handleClose}><TvIcon className='moreOptionsIcon'/>Series</MenuItem></Link>
                     </Menu>
                 </div>
             </div>
